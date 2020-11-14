@@ -6,13 +6,13 @@ export interface Store<T, M> {
 	readonly state: T;
 
 	set(state: T): void;
-	set<K extends keyof M>(state: T, event: K | '*'): void;
+	set<K extends keyof M>(state: T, event: K | "*"): void;
 
 	on<K extends keyof M>(event: K, handler: Handler<T, M[K]>): Unsubscriber;
-	dispatch<K extends keyof M>(event: K, data: M[K]): Promise<void> | void;
+	dispatch<K extends keyof M>(event: K, data: M[K]): Promise<T> | T;
 
 	listen(func: Listener<T>): Unsubscriber;
-	listen<K extends keyof M>(event: K | '*', func: Listener<T>): Unsubscriber;
+	listen<K extends keyof M>(event: K | "*", func: Listener<T>): Unsubscriber;
 }
 
-export default function<M, T>(obj?: T): Store<T, M>;
+export default function <M, T>(obj?: T): Store<T, M>;

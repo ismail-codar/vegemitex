@@ -30,7 +30,7 @@ export default function (obj) {
 		},
 
 		set(obj, evt) {
-			loop((hooks['*'] || []).concat(evt && hooks[evt] || []), value, klona(value = obj), 0);
+			return loop((hooks['*'] || []).concat(evt && hooks[evt] || []), value, klona(value = obj), 0);
 		},
 
 		listen(evt, func) {
@@ -43,9 +43,9 @@ export default function (obj) {
 			var tmp = loop(tree[evt] || [], data, klona(value), 0);
 			if (typeof tmp.then == 'function') return tmp.then(x => {
 				if (x == null) throw 'state did not returned!';
-				$.set(x, evt);
+				return $.set(x, evt);
 			});
-			else $.set(tmp, evt);
+			else return $.set(tmp, evt);
 		}
 	};
 }
