@@ -29,6 +29,7 @@
   ],
   "scripts": {
     "build": "bundt",
+    "local": "bundt && yalc publish && yalc push",
     "test": "tape -r esm test/*.js | tap-spec"
   },
   "dependencies": {
