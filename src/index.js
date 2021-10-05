@@ -6,7 +6,7 @@ function loop(list, data, state, idx, isAsync) {
 	if (!fn) return isAsync ? Promise.resolve(state) : state;
 
 	try {
-		tmp = fn(data, state);
+		tmp = fn(state, data);
 	} catch (err) {
 		if (isAsync) return Promise.reject(err);
 		else throw err;
