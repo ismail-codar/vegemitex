@@ -1,6 +1,6 @@
 {
   "name": "vegemitex",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "ismail-codar/vegemitex",
   "description": "A Pub/Sub state manager you'll love... or hate",
   "module": "dist/index.mjs",
