@@ -1,5 +1,15 @@
 import klona from "klona";
 
+export const valueFn = (val) => {
+	var value = val;
+	return (val) => {
+		if (val !== undefined) {
+			value = val;
+		}
+		return value;
+	};
+};
+
 function loop(list, data, state, idx, isAsync) {
 	var tmp,
 		fn = list[idx++];
