@@ -1,6 +1,6 @@
 {
   "name": "vegemitex",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": "ismail-codar/vegemitex",
   "description": "A Pub/Sub state manager you'll love... or hate",
   "module": "dist/vegemitex.es.js",
